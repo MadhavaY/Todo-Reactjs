@@ -13,7 +13,7 @@ function Todolist(props) {
 
 
   const deleteTodo = (ind) => {
-    alert(ind);
+    // alert(ind);
     var newList = props.todolist;
     if (Array.isArray(props.todolist)) {
 

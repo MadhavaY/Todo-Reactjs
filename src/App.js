@@ -4,56 +4,56 @@ import Todocount from './Components/Todocount';
 import Todolist from './Components/Todolist';
 import Addtodo from './Components/Addtodo';
 import Darkmode from './Components/Darkmode';
-import {useState,useEffect} from "react";
+import { useState, useEffect } from "react";
+
+const getLocalItems=()=>{
+  let list = localStorage.getItem('list');
+  console.log(list);
+
+  if(list){
+    return JSON.parse( localStorage.getItem('list'));
+  }else{
+    return [];
+  }
+}
+
 
 function App() {
-  let[todolist, setTodolist] = useState([]);
-  const [theme,setTheme] = useState('light');
+  let [todolist, setTodolist] = useState(getLocalItems());
+  const [theme, setTheme] = useState('light');
 
-//   const handleChange = (e)=>{
-//     let value = e.target.value;
-//     let name = e.target.name;
+  useEffect(()=>{
+    localStorage.setItem('list',JSON.stringify(todolist))
+  },[todolist]);
 
-//     setTodolist((prev)=>({...prev,[name]:value}));
-//   }
-  
-// useEffect(()=>{
-//   const formS = JSON.parse(localStorage.getItem("user"))
-  
-//   setTodolist((prev)=>({...prev,...formS}));
-// },[])
-
-//   useEffect(()=>{
-//     localStorage.setItem("user",JSON.stringify(setTodolist))
-// },[todolist]);
 
   return (
 
     <div className={`container ${theme}`}>
-    <div className="row">
+      <div className="row">
 
-    {/* <div>
+        {/* <div>
         <Darkmode></Darkmode>
       </div> */}
 
-      <div >
-      <Addtodo setTodolist={setTodolist} todolist={todolist}/>
-      </div>
-      
-      <div >
+        <div >
+          <Addtodo setTodolist={setTodolist} todolist={todolist} />
+        </div>
 
-      <Todolist todolist={todolist} setTodolist={setTodolist}></Todolist>
+        <div >
+
+          <Todolist todolist={todolist} setTodolist={setTodolist}></Todolist>
+        </div>
+
+        <div >
+          {/* <Todocount todolist={todolist}></Todocount> */}
+        </div>
+
+
+
+
       </div>
 
-      <div >
-      {/* <Todocount todolist={todolist}></Todocount> */}
-      </div>
-
-      
-         
-      
-    </div>
-   
     </div>
   );
 }
