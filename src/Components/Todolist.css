@@ -58,4 +58,9 @@
         width:20rem ;
         margin-top: 25rem;
     }
+
+
+    #deletebtn{
+        margin-top: 0;
+    }
 }

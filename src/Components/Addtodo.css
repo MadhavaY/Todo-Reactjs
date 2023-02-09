@@ -81,16 +81,17 @@
     .addtodo h1 {
         text-align: center;
     }
-/* 
+
     .addtodoelements{
         display: flex;
+        flex-direction: column;
         margin: auto;
-        justify-content: center;
-    } */
+        align-items: center;
+    }
 
     .input {
-        width: 20rem;
-        align-items: center;
+        width: 19rem;
+        /* align-items: center; */
     }
 
     .input::placeholder {
@@ -99,7 +100,6 @@
 
     .button {
         margin-top: 2rem;
-        /* display: flex;
-        margin: auto; */
+        /* align-items: center; */
     }
 }
