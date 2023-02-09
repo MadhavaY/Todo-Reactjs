@@ -50,3 +50,12 @@
     right: 2rem;
     /* margin-top: -1.8rem; */
 }
+
+
+
+@media only screen and (max-width:600px) {
+    .list-container{
+        width:20rem ;
+        margin-top: 25rem;
+    }
+}

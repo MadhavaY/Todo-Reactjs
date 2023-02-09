@@ -17,4 +17,14 @@ body.dark{
   right: 0;
   margin: auto; 
   height: 15rem;
+  /* border: 1px solid red; */
+  /* background-color: #022C43; */
+}
+
+
+
+@media only screen and (max-width:600px){
+  .container{
+    width: 15rem;
+  }
 }
