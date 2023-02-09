@@ -75,23 +75,30 @@
 @media only screen and (max-width:600px) {
     .addtodo {
         width: 10rem;
-
+       position: none;
+    
     }
 
     .addtodo h1 {
         text-align: center;
     }
 
-    .addtodoelements{
+    .addtodoelements {
         display: flex;
         flex-direction: column;
         margin: auto;
         align-items: center;
+        /* position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0; */
     }
 
     .input {
         width: 19rem;
         /* align-items: center; */
+        margin-left: 3rem;
     }
 
     .input::placeholder {
